@@ -50,11 +50,9 @@ dispatch_group_async(group,queue, ^{
 
 
 ```
-<<<<<<< HEAD
-  dispatch_group_t group = dispatch_group_create();
-=======
+
 dispatch_group_t group = dispatch_group_create();
->>>>>>> f8f2d248152968f324fafe989a7893b0058f74af
+
     __block BOOL isSuccess = NO;
     for (CellModel *cellModel in modelArray) {
          <!--异步下载图片-->
