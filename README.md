@@ -1,8 +1,8 @@
-# leanMessage
-记录学习笔记
+# DailyTips
+记录 ios 开发过程中遇到的问题及心得
 
 
-## dispatch_group 日常使用
+## 1.dispatch_group 日常使用
 
 
 **#1.常见书写方式**
@@ -84,7 +84,7 @@ dispatch_group_notify(group, dispatch_get_main_queue(), ^{
 ```
 
 
-## 侧滑返回手势
+## 2.侧滑返回手势
 
 自定定义返回按钮时，系统自带的滑动返回手势会失效:
 
