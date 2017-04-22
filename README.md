@@ -2,8 +2,11 @@
 记录学习笔记
 
 
-# dispatch_group 日常使用
+## dispatch_group 日常使用
+
+
 **#1.常见书写方式**
+
 
 ```
 dispatch_group_t group = dispatch_group_create();   
@@ -41,13 +44,17 @@ dispatch_group_async(group,queue, ^{
       <!--do work-->
     });
 ```
-    
-    **#3.当我们使用其他的三方库做网络请求或则图片下载时，而请求的任务包含多个，需要
+
+**#3.当我们使用其他的三方库做网络请求或则图片下载时，而请求的任务包含多个，需要
 等待这些任务都执行完成之后，再返回结果**，如下列子：
 
 
 ```
+<<<<<<< HEAD
   dispatch_group_t group = dispatch_group_create();
+=======
+dispatch_group_t group = dispatch_group_create();
+>>>>>>> f8f2d248152968f324fafe989a7893b0058f74af
     __block BOOL isSuccess = NO;
     for (CellModel *cellModel in modelArray) {
          <!--异步下载图片-->
@@ -66,7 +73,7 @@ dispatch_group_async(group,queue, ^{
     }
     
 
-    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+dispatch_group_notify(group, dispatch_get_main_queue(), ^{
          <!-- more -->
         if (isSuccess) {
             completion(NetWorkingResultTypeSuccess,@"success");
@@ -75,8 +82,9 @@ dispatch_group_async(group,queue, ^{
         }
         
     });
+
 ```
-#侧滑返回手势
+##侧滑返回手势
 
 自定定义返回按钮时，系统自带的滑动返回手势会失效：
 新建一个类，继承UINavigationController，重写pushViewController: animated: 方法，如下：
