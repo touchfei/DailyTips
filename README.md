@@ -83,9 +83,11 @@ dispatch_group_notify(group, dispatch_get_main_queue(), ^{
 
 ```
 
-##侧滑返回手势
 
-自定定义返回按钮时，系统自带的滑动返回手势会失效：
+## 侧滑返回手势
+
+自定定义返回按钮时，系统自带的滑动返回手势会失效:
+
 新建一个类，继承UINavigationController，重写pushViewController: animated: 方法，如下：
 
 ```
